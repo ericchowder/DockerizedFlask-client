@@ -119,6 +119,7 @@ import axios from 'axios'
     methods: {
       async loadUser(){
         try {
+          console.log("BASE URL: " + process.env.VUE_APP_BACKEND_URL)
           const headers = {
             "Content-Type": "application/x-www-form-urlencoded",
             Accept: "application/json"
