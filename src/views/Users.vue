@@ -173,7 +173,7 @@ import axios from 'axios'
     methods: {
       async loadUser(){
         try {
-          const response = await axios.get('http://localhost:5000/user')
+          const response = await axios.get(`${process.env.VUE_APP_BACKEND_URL}/user`)
           //console.log("test")
           this.user = response.data[response.data.length - 1].name
           //console.log(user)
@@ -188,7 +188,7 @@ import axios from 'axios'
             "Content-Type": "application/x-www-form-urlencoded",
             Accept: "application/json"
           }
-          const response = await axios.get('http://localhost:5000/user',
+          const response = await axios.get(`${process.env.VUE_APP_BACKEND_URL}/user`,
           { headers })
           //console.log("test")
           this.allUsers = response.data
@@ -203,7 +203,7 @@ import axios from 'axios'
           const headers = {
             "Content-Type": "application/json"
           }
-          const response = await axios.post('http://localhost:5000/user', 
+          const response = await axios.post(`${process.env.VUE_APP_BACKEND_URL}/user`, 
           JSON.stringify({
             id: this.id,
             public_id: this.public_id,

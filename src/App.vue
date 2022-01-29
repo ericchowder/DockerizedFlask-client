@@ -123,7 +123,7 @@ import axios from 'axios'
             "Content-Type": "application/x-www-form-urlencoded",
             Accept: "application/json"
           }
-          const response = await axios.get('http://localhost:5000/user',
+          const response = await axios.get(`${process.env.VUE_APP_BACKEND_URL}/user`,
           { headers })
           this.user = response.data[0].name
         } catch (err) {
